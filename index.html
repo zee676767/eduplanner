@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>EduPlanner</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="app-container">
+  <div class="card calendar-section">
+    <div class="calendar-header">
+      <h1 class="brand">EduPlanner</h1>
+      <div class="controls">
+        <button id="prevMonth">←</button>
+        <div class="date-labels">
+          <select id="monthSelect"></select>
+          <select id="yearSelect"></select>
+        </div>
+        <button id="nextMonth">→</button>
+      </div>
+    </div>
+    
+    <div class="weekdays">
+      <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+    </div>
+    <div class="calendar-grid" id="daysGrid"></div>
+
+    <div class="subject-manager">
+      <p class="section-label">Manage Subjects</p>
+      <div class="input-row">
+        <input type="text" id="newSubjectInput" placeholder="Add a subject (e.g. Math)...">
+        <button onclick="addNewSubject()">Add Subject</button>
+      </div>
+      <div id="subjectList" class="chip-container"></div>
+    </div>
+  </div>
+
+  <div class="card sidebar-section">
+    <p class="section-label">Upcoming Tasks</p>
+    <div id="taskContainer" class="task-list"></div>
+  </div>
+</div>
+
+<div id="taskModal" class="modal-overlay">
+  <div class="modal-box">
+    <h2>New Assignment</h2>
+    <div class="form-group">
+      <label>Assignment Name</label>
+      <input type="text" id="modalTaskName" placeholder="What is the task?">
+    </div>
+    <div class="form-group">
+      <label>Subject</label>
+      <select id="modalSubjectDropdown"></select>
+    </div>
+    <div class="modal-buttons">
+      <button onclick="closeModal()" class="btn-flat">Cancel</button>
+      <button id="saveTaskBtn" class="btn-main">Save Task</button>
+    </div>
+  </div>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
